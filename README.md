@@ -2,7 +2,7 @@
 
 Purpose: A step-by-step guide to convert your project outline into a well-structured GitHub repository with notes, templates, code skeletons, workflows, and a set of issues/milestones so your team can start implementing immediately.
 
-Table of contents
+# Table of contents
 # Quick summary
 # High-level goals \& scope
 # Recommended repo layout (file tree)
@@ -85,5 +85,6 @@ blockchain-voting/
 # ├─ README.md
 
 # └─ LICENSE
+
 
 
