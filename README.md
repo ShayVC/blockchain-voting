@@ -1,5 +1,17 @@
 # 🗳️ Blockchain Voting System
 
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![React](https://img.shields.io/badge/React-18+-61DAFB.svg?logo=react)
+![Node.js](https://img.shields.io/badge/Node.js-18+-339933.svg?logo=node.js)
+![Solidity](https://img.shields.io/badge/Solidity-0.8+-363636.svg?logo=solidity)
+![Truffle](https://img.shields.io/badge/Truffle-5+-5E473B.svg?logo=truffle)
+![Ganache](https://img.shields.io/badge/Ganache-Local%20Blockchain-F7931E.svg?logo=ethereum)
+![MongoDB](https://img.shields.io/badge/MongoDB-6+-47A248.svg?logo=mongodb)
+
+---
+
 ## 🎯 Purpose
 A **decentralized voting platform** designed to demonstrate the integration of blockchain technology into real-world applications. This system ensures **transparency, immutability, and trust** by storing votes on-chain while managing non-sensitive information off-chain.
 
@@ -173,8 +185,62 @@ Built with ❤️ by students of **Cebu Institute of Technology - University**.
 
 ---
 
+## 👥 The Developers
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/ShayVC">
+        <img src="https://avatars.githubusercontent.com/ShayVC" width="100px;" alt="Shayne"/>
+        <br />
+        <sub><b>Shayne Marie B. Angus</b></sub>
+      </a>
+      <br />
+      -
+      <br/>
+      <a href="https://github.com/ShayVC">🌐 GitHub</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Howardness">
+        <img src="https://avatars.githubusercontent.com/Howardness" width="100px;" alt="Mac"/>
+        <br />
+        <sub><b>Mac Howard Caranzo</b></sub>
+      </a>
+      <br />
+      -
+      <br/>
+      <a href="https://github.com/Howardness">🌐 GitHub</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/FrancisGarryNillama">
+        <img src="https://avatars.githubusercontent.com/FrancisGarryNillama" width="100px;" alt="Francis"/>
+        <br />
+        <sub><b>Francis Garry S. Nillama</b></sub>
+      </a>
+      <br />
+      -
+      <br/>
+      <a href="https://github.com/FrancisGarryNillama">🌐 GitHub</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/drN-n">
+        <img src="https://avatars.githubusercontent.com/drN-n" width="100px;" alt="Aldrin"/>
+        <br />
+        <sub><b>Aldrin R. Mangubat</b></sub>
+      </a>
+      <br />
+      -
+      <br/>
+      <a href="https://github.com/drN-n">🌐 GitHub</a>
+    </td>
+  </tr>
+</table>
+
+---
+
 ## 🏁 Future Improvements
 🚀 Add zk-SNARKs (zero-knowledge privacy)  
 🚀 Support multiple elections  
 🚀 Use IPFS for immutable candidate data  
 🚀 Add mobile wallet support  
+
