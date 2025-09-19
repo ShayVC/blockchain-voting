@@ -1,93 +1,29 @@
-﻿# Blockchain Voting System
+# Blockchain Voting System
 
-Purpose: A step-by-step guide to convert your project outline into a well-structured GitHub repository with notes, templates, code skeletons, workflows, and a set of issues/milestones so your team can start implementing immediately.
+## Purpose  
+A step-by-step guide to convert your project outline into a well-structured GitHub repository with notes, templates, code skeletons, workflows, and a set of issues/milestones so your team can start implementing immediately.  
 
-# Table of contents
-# Quick summary
-# High-level goals \& scope
-# Recommended repo layout (file tree)
-# Step-by-step: create the GitHub repo (web UI + gh CLI)
-# Local setup \& initial commits (commands)
-# Tech-specific scaffolding (Frontend / Backend / Contracts)
-# Smart contract (Solidity) skeleton + security notes
-# Backend ↔ Contract integration notes (who signs tx?)
-# Frontend (React) skeleton — wallet integration (MetaMask)
-# Database schemas (MongoDB example)
-# CI / GitHub Actions basics
-# Project management: issues, milestones, PR workflow
-# Example first issues (to paste directly into Issues)
-# Useful git commands \& branching strategy
-#
-# High-level goals \& scope**
-Course project: Demonstrate an Ethereum-based voting app with:
-Voter registration (off-chain)
-Candidate management
-Casting votes (on-chain transactions)
-Viewing results (read from chain)
-#
-Basic admin controls (add/remove candidate before election starts)
-#
-# Recommended repo layout (single-repo monorepo style)
-blockchain-voting/
+## High-Level Goals & Scope  
+This project is a course assignment that demonstrates an Ethereum-based voting application. The system is designed with both off-chain and on-chain components to showcase the integration of blockchain technology in a real-world use case. The main goals include implementing voter registration (managed off-chain), enabling candidate management, allowing users to cast votes through on-chain Ethereum transactions, and providing a way to view results directly from the blockchain.  
 
-# ├─ .github/
+## Repository Layout  
+The repository will follow a clear and maintainable structure, separating the frontend, backend, and smart contract components. This will make it easier to scale, test, and collaborate on the project. A recommended file tree will be included to guide contributors on where specific code and configurations should be placed.  
 
-# │ ├─ workflows/
+## Local Setup & Initial Commits  
+Instructions will be provided for setting up the GitHub repository using both the web interface and the GitHub CLI. Steps for local environment configuration, creating initial commits, and syncing changes will be outlined. Useful Git commands and a recommended branching strategy will also be included to encourage good version control practices.  
 
-# │ │ ├─ nodejs-backend.yml
+## Smart Contracts  
+The voting logic will be implemented in Solidity smart contracts, with security best practices emphasized to protect against common vulnerabilities such as reentrancy attacks or integer overflows. The contract will handle candidate management, vote casting, and result tallying. Integration notes will also clarify who signs transactions and how the contract is expected to interact with the backend and frontend.  
 
-# │ │ └─ solidity-tests.yml
+## Backend Integration  
+The backend will serve as a bridge between the smart contracts and the off-chain components. It will manage voter registration and connect to a MongoDB database for handling off-chain data. Detailed notes will explain how the backend interacts with the contract and which operations require on-chain signing.  
 
-# │ ├─ ISSUE\_TEMPLATE.md
+## Frontend Development  
+The frontend will be developed using React, with wallet integration provided through MetaMask. This will allow users to connect their Ethereum wallets, cast votes, and view election results directly from the blockchain. The frontend skeleton will include the necessary scaffolding for interacting with the backend and the smart contract.  
 
-# │ └─ PULL\_REQUEST\_TEMPLATE.md
+## Database Schema  
+For managing voter registration and other off-chain data, a MongoDB schema will be provided as an example. This will demonstrate how to structure data such as voter profiles and candidate information while maintaining efficient queries and scalability.  
 
-# ├─ contracts/
-
-# │ ├─ contracts/Voting.sol
-
-# │ ├─ scripts/deploy.js
-
-# │ └─ test/voting.test.js
-
-# ├─ backend/
-
-# │ ├─ package.json
-
-# │ ├─ src/
-
-# │ │ ├─ app.js
-
-# │ │ ├─ routes/
-
-# │ │ └─ models/
-
-# │ └─ .env.example
-
-# ├─ frontend/
-
-# │ ├─ package.json
-
-# │ └─ src/
-
-# │ ├─ pages/
-
-# │ └─ components/
-
-# ├─ docs/
-
-# │ └─ ARCHITECTURE.md
-
-# ├─ scripts/
-
-# ├─ .gitignore
-
-# ├─ README.md
-
-# └─ LICENSE
-
-
-
-
-
-
+## Continuous Integration (CI)  
+The project will include basic GitHub Actions workflows to enforce code quality and run automated checks. This ensures that changes are tested and validated before being merged into the main branch.  
+To encourage collaboration, the repository will include guidelines for using GitHub Issues, milestones, and pull requests (PRs). Example issues will also be included in the documentation so contributors can quickly get started. This will support a structured workflow and make it easier to track progress.  
