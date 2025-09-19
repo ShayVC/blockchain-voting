@@ -1,7 +1,7 @@
 # Blockchain Voting System
 
 ## Purpose  
-A step-by-step guide to convert your project outline into a well-structured GitHub repository with notes, templates, code skeletons, workflows, and a set of issues/milestones so your team can start implementing immediately.  
+A decentralized voting platform designed to demonstrate the integration of blockchain technology into real-world applications. The system ensures transparency, immutability, and trust by storing votes on-chain while managing non-sensitive information off-chain. 
 
 ## High-Level Goals & Scope  
 This project is a course assignment that demonstrates an Ethereum-based voting application. The system is designed with both off-chain and on-chain components to showcase the integration of blockchain technology in a real-world use case. The main goals include implementing voter registration (managed off-chain), enabling candidate management, allowing users to cast votes through on-chain Ethereum transactions, and providing a way to view results directly from the blockchain.  
@@ -26,4 +26,7 @@ For managing voter registration and other off-chain data, a MongoDB schema will 
 
 ## Continuous Integration (CI)  
 The project will include basic GitHub Actions workflows to enforce code quality and run automated checks. This ensures that changes are tested and validated before being merged into the main branch.  
-To encourage collaboration, the repository will include guidelines for using GitHub Issues, milestones, and pull requests (PRs). Example issues will also be included in the documentation so contributors can quickly get started. This will support a structured workflow and make it easier to track progress.  
+To encourage collaboration, the repository will include guidelines for using GitHub Issues, milestones, and pull requests (PRs). Example issues will also be included in the documentation so contributors can quickly get started. This will support a structured workflow and make it easier to track progress.
+
+
+
