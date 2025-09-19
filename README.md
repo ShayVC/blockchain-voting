@@ -17,16 +17,16 @@ Purpose: A step-by-step guide to convert your project outline into a well-struct
 # Project management: issues, milestones, PR workflow
 # Example first issues (to paste directly into Issues)
 # Useful git commands \& branching strategy
-
+#
 # High-level goals \& scope**
 # Course project: Demonstrate an Ethereum-based voting app with:
 # Voter registration (off-chain)
 # Candidate management
 # Casting votes (on-chain transactions)
 # Viewing results (read from chain)
-
+#
 # Basic admin controls (add/remove candidate before election starts)
-
+#
 # Recommended repo layout (single-repo monorepo style)
 blockchain-voting/
 
@@ -85,6 +85,7 @@ blockchain-voting/
 # ├─ README.md
 
 # └─ LICENSE
+
 
 
 
