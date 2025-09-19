@@ -1,39 +1,43 @@
 # 🗳️ Blockchain Voting System
 
-## 🎯 Purpose  
-This repository contains a full-stack implementation guide for an **Ethereum-based voting application**, developed as a **course assignment**. It aims to demonstrate how blockchain can be integrated into real-world voting systems, focusing on transparency, decentralization, and security.
+## 🎯 Purpose
+A **decentralized voting platform** designed to demonstrate the integration of blockchain technology into real-world applications. This system ensures **transparency, immutability, and trust** by storing votes on-chain while managing non-sensitive information off-chain.
 
 ---
 
 ## 📌 High-Level Goals & Scope
+This project is a **course assignment** that demonstrates an **Ethereum-based voting application** with both **off-chain** and **on-chain** components.
 
 ✅ Voter registration (managed off-chain)  
-✅ Candidate management (on-chain and off-chain)  
-✅ Vote casting through Ethereum smart contracts  
-✅ Real-time results directly from the blockchain  
-✅ Modular codebase for **frontend, backend**, and **smart contracts**
+✅ Candidate management (on-chain & off-chain)  
+✅ Vote casting via Ethereum transactions  
+✅ Real-time blockchain-based results  
+✅ Modular architecture: **frontend, backend, smart contracts**
 
 ---
 
 ## 🗂️ Repository Structure
-
 ```bash
 📁 blockchain-voting-system/
 ├── 📁 frontend/          # React-based voting interface
-├── 📁 backend/           # Express.js API and MongoDB connection
+├── 📁 backend/           # Express.js API + MongoDB connection
 ├── 📁 smart-contracts/   # Solidity contracts for voting logic
 ├── 📁 .github/           # GitHub Actions workflows
 ├── 📄 README.md
 └── 📄 package.json
-⚙️ Local Setup & Initial Commits
-📁 Clone the Repository
-bash
-Copy code
-git clone https://github.com/your-username/blockchain-voting-system.git
+```
+
+---
+
+## ⚙️ Local Setup & Initial Commits
+### 📁 Clone the Repository
+```bash
+git clone https://github.com/ShayVC/blockchain-voting.git
 cd blockchain-voting-system
-🛠️ Install Dependencies
-bash
-Copy code
+```
+
+### 🛠️ Install Dependencies
+```bash
 # Backend
 cd backend && npm install
 
@@ -42,10 +46,11 @@ cd ../frontend && npm install
 
 # Smart Contracts
 cd ../smart-contracts && npm install
-🚀 Start Local Development Environment
-bash
-Copy code
-# Run Ganache for local Ethereum blockchain
+```
+
+### 🚀 Start Local Development Environment
+```bash
+# Run Ganache (local Ethereum blockchain)
 ganache
 
 # Compile & deploy smart contracts
@@ -56,128 +61,120 @@ cd backend && npm start
 
 # Start frontend React app
 cd ../frontend && npm start
-🔗 Blockchain Architecture & Tech Stack
-Layer	Tech Stack
-Frontend	React, HTML, CSS, JavaScript, MetaMask Integration
-Backend	Node.js, Express.js, RESTful API
-Blockchain	Ethereum, Solidity, Truffle/Hardhat, Ganache
-Database	MongoDB or PostgreSQL (for off-chain metadata only)
-Dev Tools	VS Code, GitHub Actions, Mocha/Chai, MetaMask, Git CLI
+```
 
-🧱 Smart Contracts (Solidity)
-✔️ Written in Solidity
-✔️ Deployed to Ethereum (testnet or local Ganache)
-✔️ Handles:
+---
 
-Candidate registration
+## 🔗 Blockchain Architecture & Tech Stack
+| Layer       | Tech Stack |
+|-------------|------------|
+| Frontend    | React, HTML, CSS, JS, MetaMask |
+| Backend     | Node.js, Express.js, REST API |
+| Blockchain  | Ethereum, Solidity, Truffle/Hardhat, Ganache |
+| Database    | MongoDB / PostgreSQL (off-chain data only) |
+| Dev Tools   | VS Code, GitHub Actions, Mocha/Chai, Git CLI |
 
-Vote casting (one vote per verified address)
+---
 
-Real-time result tallying
+## 🧱 Smart Contracts (Solidity)
+✔️ Candidate registration  
+✔️ Vote casting (1 per verified wallet)  
+✔️ Real-time result tallying  
+✔️ Event logging for frontend updates  
 
-Event logging for frontend updates
+🔒 **Security Considerations**:
+- Reentrancy protection
+- Input validation (only registered voters can vote)
+- Immutable storage (no deletions/overwrites)
 
-🛡️ Security Considerations
-✅ Reentrancy protection
+---
 
-✅ Input validation (only registered voters can vote)
+## 🔙 Backend Integration (Node.js + Express)
+The backend acts as a **middleware** between the frontend and the blockchain.
 
-✅ Immutable vote storage (no deletions or overwrites)
+📌 Responsibilities:
+- Manage voter registration
+- Handle candidate metadata (off-chain)
+- Provide admin/auth routes
 
-🔙 Backend Integration (Node.js + Express)
-📌 Acts as middleware between frontend and smart contracts
-📌 Manages:
+### 🌐 API Endpoints
+| Method | Endpoint              | Description |
+|--------|-----------------------|-------------|
+| POST   | `/registerVoter`      | Register a new voter |
+| POST   | `/addCandidate`       | Admin adds a candidate |
+| POST   | `/castVote`           | Cast a vote transaction |
+| GET    | `/results`            | Fetch live results |
+| GET    | `/candidates`         | List candidates |
+| DELETE | `/removeCandidate/:id`| Remove candidate (admin only) |
 
-Voter registration
+---
 
-Candidate metadata (off-chain)
+## 🖥️ Frontend (React + MetaMask)
+- 🔐 Wallet login (MetaMask)
+- 🗳️ Cast vote via blockchain transaction
+- 📊 View live election results
+- 🎯 Connect seamlessly to backend & contracts
 
-Auth & admin routes
+---
 
-🌐 API Endpoints
-Method	Endpoint	Description
-POST	/registerVoter	Register a new voter
-POST	/addCandidate	Admin adds a candidate
-POST	/castVote	Send vote transaction to contract
-GET	/results	Fetch real-time vote results
-GET	/candidates	List all candidates
-DELETE	/removeCandidate/:id	Remove a candidate (admin only)
+## 🗃️ Database Schema (ERD Overview)
+Used for **off-chain metadata & management** (not storing votes).
 
-🖥️ Frontend (React + MetaMask)
-🔐 Wallet login (MetaMask)
+| Table     | Fields |
+|-----------|---------------------------------------------|
+| User      | UserID, Name, Email, WalletAddress, Role |
+| Candidate | CandidateID, Name, Position, Party |
+| Vote      | VoteID, VoterID, CandidateID, Timestamp, TxHash |
+| Election  | ElectionID, Title, StartDate, EndDate |
 
-🗳️ Cast vote (signed blockchain transaction)
+⚠️ **Note:** Votes are stored **only on-chain**. Off-chain DB is for metadata, user management, and audit logs.
 
-📊 View live election results
+---
 
-🎯 Connect to backend & smart contract
-
-🗃️ Database Schema (ERD Overview)
-Used for off-chain management (not for storing votes).
-
-Table	Fields
-User	UserID, Name, Email, WalletAddress, Role (Voter/Admin)
-Candidate	CandidateID, Name, Position, Party
-Vote	VoteID, VoterID, CandidateID, Timestamp, TxHash
-Election	ElectionID, Title, StartDate, EndDate
-
-⚠️ Note: Votes are stored only on-chain for transparency and immutability. Off-chain data is used for metadata, user management, and audit logs.
-
-🧪 Testing & CI/CD
-✅ Unit tests for smart contracts using Mocha + Chai
-
-✅ API tests with Postman / Jest
-
+## 🧪 Testing & CI/CD
+✅ Smart contract tests (Mocha + Chai)  
+✅ API tests (Postman / Jest)  
 ✅ GitHub Actions for:
+- Linting
+- Build verification
+- Automated tests
 
-Code linting
+---
 
-Build verification
-
-Test automation
-
-📈 System Architecture Diagram
-sql
-Copy code
-+-------------+       HTTP        +-------------+       Web3.js       +-----------------+
+## 📈 System Architecture Diagram
+```sql
++-------------+       HTTP        +--------------+      Web3.js        +-----------------+
 |  Frontend   |  <=============>  |   Backend    |  <=============>    | Smart Contracts |
-|  (React.js) |                  | (Node.js API)|                     |  (Solidity)     |
-+-------------+                  +-------------+                     +--------+--------+
+|  (React.js) |                   | (Node.js API)|                     |  (Solidity)     |
++-------------+                   +--------------+                     +--------+--------+
       ↑                                 ↓                                      ↑
-      |                          MongoDB / PostgreSQL                         |
-      |                        (User & Metadata DB)                           |
-      +-----------------------------------------------------------------------+
-🚧 GitHub Workflow & Collaboration
-📁 Use branches: main, dev, feature/*, hotfix/*
+      |                          MongoDB / PostgreSQL                          |
+      |                          (User & Metadata DB)                          |
+      +------------------------------------------------------------------------+
+```
 
-🐛 Report bugs or suggest features via GitHub Issues
+---
 
-📍 Track progress using Milestones
+## 🚧 GitHub Workflow & Collaboration
+- 📁 Branches: `main`, `dev`, `feature/*`, `hotfix/*`
+- 🐛 Issues: Report bugs / request features
+- 📍 Milestones: Track progress
+- ✅ Pull Requests (PRs): For all contributions
 
-✅ Submit changes via Pull Requests (PRs)
+---
 
-🙌 Contributing
-We welcome contributions from developers, designers, and blockchain enthusiasts!
+## 📄 License
+This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for details.
 
-Fork the repo
+---
 
-Create a new branch (feature/your-feature)
+## 👥 Team & Acknowledgements
+Built with ❤️ by students of **Cebu Institute of Technology - University**.
 
-Commit your changes (git commit -m 'Add feature')
+---
 
-Push and submit a PR
-
-📄 License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-👥 Team & Acknowledgements
-Built with ❤️ by students of [Your University Name] for [Course Name / Instructor].
-
-🏁 Future Improvements
-Add zk-SNARKs or zero-knowledge voting privacy
-
-Support for multi-election workflows
-
-Use IPFS for storing immutable candidate profiles
-
-Add mobile wallet support
+## 🏁 Future Improvements
+🚀 Add zk-SNARKs (zero-knowledge privacy)  
+🚀 Support multiple elections  
+🚀 Use IPFS for immutable candidate data  
+🚀 Add mobile wallet support  
